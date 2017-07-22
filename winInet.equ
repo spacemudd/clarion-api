@@ -1,0 +1,50 @@
+AgentFF                  CSTRING('Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.8.0.3) Gecko/20060426 Firefox/1.5.0.3<0>')
+AgentIE                  CSTRING('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)<0>')
+Agent00                  CSTRING(' <0>')
+szGET                    CSTRING('GET<0>')
+szPOST                   CSTRING('POST<0>')
+szAction				 CSTRING('/')
+equ:szAgent              equate ( Agent00 )
+
+INTERNET_INVALID_PORT_NUMBER                        equate (0)       !  use the protocol-specific default
+INTERNET_DEFAULT_FTP_PORT                           equate (21)      !  default for FTP servers
+INTERNET_DEFAULT_GOPHER_PORT                        equate (70)      !     "     "  gopher "
+INTERNET_DEFAULT_HTTP_PORT                          equate (80)      !     "     "  HTTP   "
+INTERNET_DEFAULT_HTTPS_PORT                         equate (443)     !     "     "  HTTPS  "
+INTERNET_DEFAULT_SOCKS_PORT                         equate (1080)    !  default for SOCKS firewall servers.
+INTERNET_MAX_HOST_NAME_LENGTH                       equate (256)
+INTERNET_MAX_USER_NAME_LENGTH                       equate (128)
+INTERNET_MAX_PASSWORD_LENGTH                        equate (128)
+INTERNET_MAX_PORT_NUMBER_LENGTH                     equate (5)       !  INTERNET_PORT is unsigned short
+INTERNET_MAX_PORT_NUMBER_VALUE                      equate (65535)   !  maximum unsigned short value
+INTERNET_MAX_PATH_LENGTH                            equate (2048)
+INTERNET_MAX_SCHEME_LENGTH                          equate (32)      !  longest protocol name length
+INTERNET_MAX_DELIMITER_SIZE                         equate (3)
+INTERNET_MAX_URL_LENGTH                             equate (INTERNET_MAX_SCHEME_LENGTH |
+                                                    + INTERNET_MAX_DELIMITER_SIZE |
+                                                    + INTERNET_MAX_PATH_LENGTH)
+
+INTERNET_SERVICE_URL                                equate (0)
+INTERNET_SERVICE_FTP                                equate (1)
+INTERNET_SERVICE_GOPHER                             equate (2)
+INTERNET_SERVICE_HTTP                               equate (3)
+
+
+INTERNET_OPEN_TYPE_PRECONFIG                        equate (0)          !  use registry configuration
+INTERNET_OPEN_TYPE_DIRECT                           equate (1)          !  direct to net
+INTERNET_OPEN_TYPE_PROXY                            equate (3)          !  via named proxy
+INTERNET_OPEN_TYPE_PRECONFIG_WITH_NO_AUTOPROXY      equate (4)          !  prevent using java/script/INS
+
+!INTERNET_FLAG_ASYNC                                 equate (010000000h) !  this request is asynchronous (where supported)
+
+!INTERNET_FLAG_NEED_FILE                             equate (000000010h) !  need a file for this request
+
+!COOKIES
+INTERNET_FLAG_RESTRICTED_ZONE                       equate ( 00020000H ) !// apply restricted zone policies for cookies, auth
+INTERNET_COOKIE_HTTPONLY                            equate ( 00002000H )
+INTERNET_COOKIE_THIRD_PARTY                         equate ( 00000010H )
+
+!WinAPI InternetGetCookie(Ex) GetLastError()
+ERROR_INSUFFICIENT_BUFFER                           equate (122)
+ERROR_NO_MORE_ITEMS                                 equate (259)
+ERROR_INVALID_PARAMETER                             equate (87)
